@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- inserimento sito in risultati ricerca google -->
+
+
+    <!-- favicon per i vari dispositivi (anche icone sito aggiunto a desktop) -->
+
+    
+    <link href="style.css" rel="stylesheet">
+    <title>EmaDev - portfolio di Emanuele Ciotola</title>
+    <meta name="description" content="Puoi trovare qui i miei progetti, social e contatti. Se vuoi conoscermi, segnalare un bug che hai trovato nel mio codice o sapere a cosa ho lavorato, questo è il posto giusto.">
+</head>
+<body>
+    <header id="header">
+        <nav id="header__menu">
+            <a id="home" class="active" onclick="goTo(id)">Chi sono</a>
+            <a id="portfolio" onclick="goTo(id)">Portfolio</a>
+            <a id="social" onclick="goTo(id)">Social</a>
+            <a id="contatti" onclick="goTo(id)">Contatti</a>
+        </nav>
+        <div id="header__spaceIconaMenu">
+            <img id="header__iconaMenu" class="small" src="assets/icons/menu.svg" alt="Menu" onclick="toggleMenu()" draggable="false">
+        </div>
+    </header>
+    <main id="pageContent" style="height: 1000px; z-index: 1;">
+        <section id="homePage">
+            <img id="homePage__fotoPresentazione" src="assets/images/fotoPresentazione.png" alt="Mia foto" draggable="false">
+            <article>
+                <h1 class="large">Ehi, sono Emanuele.</h1>
+                <h1 class="small">Ciao, sono<br>Emanuele</h1>
+                <p id="homePage__text">Uno studente appassionato dalla<br>programmazione, affascinato dal mondo<br>dell’informatica e della tecnologia.<br>Vediamo qualche mio progetto!</p>
+            </article>
+        </section>
+        <section id="portfolioPage">
+            <article class="portfolioPage__progetto">
+                <img src="assets/images/progettoEsameDiStato.jpeg" alt="Foto sito" draggable="false">
+                <p>Un sito realizzato per il mio<br>esame di maturità, nel quale<br>mi presento con qualche foto<br>e introduco alcuni argomenti.</p>
+                <button onclick="apriUrl('https://manux895.github.io/EsameDiStato')">Dai un'occhiata</button>
+            </article>
+            <article class="portfolioPage__progetto">
+                <img src="assets/images/progettoGiochino.jpeg" alt="Foto sito" draggable="false">
+                <p>Un sito realizzato per comprendere<br>il funzionamento dei canvas. Un<br>semplice giochino molto divertente<br>ma allo stesso tempo complesso.</p>
+                <button onclick="apriUrl('https://manux895.github.io/Giochino')">Dai un'occhiata</button>
+            </article>
+        </section>
+        <section id="socialPage">
+            <article>
+                <h1>I miei social</h1>
+                <p id="socialPage__text" class="large">Vuoi leggere il mio codice? Sapere che musica ascolto?<br>Vedere il mio bel faccino? Ora sai come farlo!</p>
+                <p id="socialPage__text" class="small">Vuoi leggere il mio codice? Sapere che<br>musica ascolto? Vedere il mio bel<br>faccino? Ora sai come farlo!</p>
+            </article>
+            <div class="socialPage__socialSpace">
+                <div class="socialSpace__social">
+                    <img class="social__socialIcon" src="assets/icons/github.svg" alt="GitHub" draggable="false" onclick="apriUrl('https://github.com/Manux895')">
+                    <button onclick="apriUrl('https://github.com/Manux895')">GitHub</button>
+                </div>
+                <div class="socialSpace__social">
+                    <img class="social__socialIcon" src="assets/icons/instagram.svg" alt="Instagram" draggable="false" onclick="apriUrl('https://www.instagram.com/ema_ciotola/')">
+                    <button onclick="apriUrl('https://www.instagram.com/ema_ciotola/')">Instagram</button>
+                </div>
+                <div class="socialSpace__social">
+                    <img class="social__socialIcon" src="assets/icons/spotify.svg" alt="Spotify" draggable="false" onclick="apriUrl('https://open.spotify.com/user/f6sjpihuksg4ehevvdzq9h0z2?si=f129585a2b1c4b86')">
+                    <button onclick="apriUrl('https://open.spotify.com/user/f6sjpihuksg4ehevvdzq9h0z2?si=f129585a2b1c4b86')">Spotify</button>
+                </div>
+                <div class="socialSpace__social">
+                    <img class="social__socialIcon" src="assets/icons/twitter.svg" alt="Twitter" draggable="false" onclick="apriUrl('https://twitter.com/ema_ciotola')">
+                    <button onclick="apriUrl('https://twitter.com/ema_ciotola')">Twitter</button>
+                </div>
+                <div class="socialSpace__social">
+                    <img class="social__socialIcon" src="assets/icons/youtube.svg" alt="YouTube" draggable="false" onclick="apriUrl('https://www.youtube.com/@EmaCiotolaDev')">
+                    <button onclick="apriUrl('https://www.youtube.com/@EmaCiotolaDev')">YouTube</button>
+                </div>
+                <div class="socialSpace__social">
+                    <img class="social__socialIcon" src="assets/icons/facebook.svg" alt="Facebook" draggable="false" onclick="apriUrl('https://www.facebook.com/emanuele.ciotola.56')">
+                    <button onclick="apriUrl('https://www.facebook.com/emanuele.ciotola.56')">Facebook</button>
+                </div>
+            </div>
+        </section>
+        <section id="contattiPage">
+            <article>
+                <h1>La mia e-mail</h1>
+                <p id="contattiPage__text" class="large">Se hai idee, proposte, consigli o se noti qualche<br>strano bug nei miei siti, puoi contattarmi!</p>
+                <p id="contattiPage__text" class="small">Se hai idee, proposte, consigli o se<br>noti qualche strano bug nei miei<br>siti, puoi contattarmi!</p>
+            </article>
+            <button onclick="apriUrl('mailto:Ema.Ciotola.Dev@gmail.com?')">Contattami</button>
+        </section>
+    </main>
+
+    <script src="Javascript/navbar.js"></script>
+    <script src="Javascript/main.js"></script>
+</body>
+</html>
