@@ -8,7 +8,7 @@
     --cardColor: #292931;
 }
 
-@font-face { font-family: myFont; src: url("Assets/Fonts/Exo2-VariableFont_wght.ttf"); }
+@font-face { font-family: myFont; src: url("assets/fonts/Exo2-VariableFont_wght.ttf"); font-display: swap; }
 
 * { padding: 0; margin: 0; box-sizing: border-box; }
 

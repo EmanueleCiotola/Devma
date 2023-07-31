@@ -25,11 +25,6 @@ function scrolling() {
     });
 }
 
-window.addEventListener("scroll", () => {
-    closeMenu(); // chiudi il menu per i dispositivi piccoli se è mostrato
-    scrolling();
-});
-
 
 
 // gestione della navbar per i dispositivi piccoli
@@ -53,6 +48,10 @@ function closeMenu() {
     }
 }
 function screenResize() { if (window.innerWidth >= 450) closeMenu(); }
+
+
+
+// event listeners
 pageContent.addEventListener('mousedown', closeMenu, {passive: true});
 pageContent.addEventListener('touchstart', closeMenu, {passive: true});
 window.addEventListener("scroll", () => {closeMenu(); scrolling();}, {passive: true});
