@@ -28,6 +28,8 @@ section { padding-top: 3rem; }
 
 h1 { font-size: 3rem; }
 
+p { line-height: 1.4rem; }
+
 img, i {
     user-select: none; /* rende testo non selezionabile */
     -moz-user-select: none; /* firefox */
