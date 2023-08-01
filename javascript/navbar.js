@@ -44,8 +44,7 @@ function closeMenu() {
     }
 }
 function screenResize() { if (window.innerWidth >= 450) closeMenu(); }
-modalPopUp.addEventListener('mousedown', closeMenu, {passive: true});
-modalPopUp.addEventListener('touchstart', closeMenu, {passive: true});
+modalPopUp.addEventListener('click', closeMenu, {passive: true});
 
 
 
