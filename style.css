@@ -28,7 +28,7 @@ section { padding-top: 3rem; }
 
 h1 { font-size: 3rem; }
 
-p { line-height: 1.4rem; }
+p { line-height: clamp(20px, 1.4rem, 28px); }
 
 img, i {
     user-select: none; /* rende testo non selezionabile */
