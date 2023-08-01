@@ -15,7 +15,7 @@ const navLinks = document.querySelectorAll("#header__menu a");
 let currentNavSectionIndex = 0;
 function scrolling() {
     navSections.forEach((section, index) => {
-        if (window.pageYOffset + (document.body.scrollHeight * 0.12) >= section.offsetTop) currentNavSectionIndex = index; //TODO da rivedere. Fa schifo
+        if (window.pageYOffset + (document.body.scrollHeight * 0.12) >= section.offsetTop) currentNavSectionIndex = index;
     });
     navLinks.forEach((link, index) => {
         link.classList.toggle("active", index === currentNavSectionIndex);
