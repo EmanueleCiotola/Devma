@@ -6,6 +6,7 @@
     --buttonColor: #F5F5F4;
     --buttonTxtColor: #222222;
     --cardColor: #292931;
+    --modalColor: rgba(34,34,34,0.4);
 }
 
 @font-face { font-family: myFont; src: url("assets/fonts/Exo2-VariableFont_wght.ttf"); font-display: swap; }
@@ -48,8 +49,16 @@ button {
 
 button:active { transform: scale(0.95); }
 
-#pageContent { padding-top: 4rem; transition: filter .15s cubic-bezier(0.3, 0, 0.25, 1.5); }
-#pageContent.header__menu--open { filter: blur(4px); }
+#modalPopUp {
+    transition: all .15s cubic-bezier(0.3, 0, 0.25, 1.5);
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+}
+#modalPopUp.modalPopUp--open { backdrop-filter: blur(4px); background-color: var(--modalColor); }
 
 @media (max-width: 480px) {  body, html { font-size: calc(13px + 0.390625vw); } h1 { font-size: 2rem; } }
 @media (max-width: 584px) { .large { display: none; } }
@@ -128,7 +137,7 @@ button:active { transform: scale(0.95); }
 
 
 /* stile homePage */
-#homePage { height: 68vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+#homePage { height: 68vh; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 4rem; }
 
 #homePage__fotoPresentazione { width: 5rem; border-radius: 100%; margin-bottom: 1.5rem; }
 

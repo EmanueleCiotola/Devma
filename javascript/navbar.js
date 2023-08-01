@@ -28,24 +28,24 @@ function scrolling() {
 isMenuShown = false;
 const header = document.getElementById("header");
 const menu = document.getElementById("header__menu");
-pageContent = document.getElementById("pageContent");
+const modalPopUp = document.getElementById("modalPopUp");
 function toggleMenu() {
     isMenuShown = !isMenuShown;
     header.classList.toggle("header__menu--open");
     menu.classList.toggle("header__menu--open");
-    pageContent.classList.toggle("header__menu--open");
+    modalPopUp.classList.toggle("modalPopUp--open");
 }
 function closeMenu() {
     if (isMenuShown == true) {
         isMenuShown = false;
         header.classList.remove("header__menu--open");
         menu.classList.remove("header__menu--open");
-        pageContent.classList.remove("header__menu--open");
+        modalPopUp.classList.remove("modalPopUp--open");
     }
 }
 function screenResize() { if (window.innerWidth >= 450) closeMenu(); }
-pageContent.addEventListener('mousedown', closeMenu, {passive: true});
-pageContent.addEventListener('touchstart', closeMenu, {passive: true});
+modalPopUp.addEventListener('mousedown', closeMenu, {passive: true});
+modalPopUp.addEventListener('touchstart', closeMenu, {passive: true});
 
 
 
