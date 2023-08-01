@@ -16,7 +16,7 @@
 body, html {
     background-color: var(--bgColor);
     color: var(--txtColor);
-    font-family: "myFont";
+    font-family: "myFont", Helvetica;
     font-size: calc(15px + 0.390625vw);
     scroll-behavior: smooth;
     text-align: center;
@@ -55,10 +55,10 @@ button:active { transform: scale(0.95); }
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 0 !important;
     width: 100%;
 }
-#modalPopUp.modalPopUp--open { backdrop-filter: blur(4px); background-color: var(--modalColor); }
+#modalPopUp.modalPopUp--open { backdrop-filter: blur(4px); background-color: var(--modalColor); height: 100vh !important; }
 
 @media (max-width: 480px) {  body, html { font-size: calc(13px + 0.390625vw); } h1 { font-size: 2rem; } }
 @media (max-width: 584px) { .large { display: none; } }
