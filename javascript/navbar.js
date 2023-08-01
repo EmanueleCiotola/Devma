@@ -14,9 +14,6 @@ const navSections = document.querySelectorAll("#homePage, #portfolioPage, #socia
 const navLinks = document.querySelectorAll("#header__menu a");
 let currentNavSectionIndex = 0;
 function scrolling() {
-    console.log(navSections);
-    console.log(navLinks);
-    console.log(currentNavSectionIndex);
     navSections.forEach((section, index) => {
         if (window.pageYOffset + (document.body.scrollHeight * 0.12) >= section.offsetTop) currentNavSectionIndex = index; //TODO da rivedere. Fa schifo
     });
@@ -29,9 +26,8 @@ function scrolling() {
 
 // gestione della navbar per i dispositivi piccoli
 isMenuShown = false;
-header = document.getElementById("header");
-menu = document.getElementById("header__menu");
-//! icon = document.getElementById("header__iconaMenu");
+const header = document.getElementById("header");
+const menu = document.getElementById("header__menu");
 pageContent = document.getElementById("pageContent");
 function toggleMenu() {
     isMenuShown = !isMenuShown;
@@ -48,11 +44,11 @@ function closeMenu() {
     }
 }
 function screenResize() { if (window.innerWidth >= 450) closeMenu(); }
+pageContent.addEventListener('mousedown', closeMenu, {passive: true});
+pageContent.addEventListener('touchstart', closeMenu, {passive: true});
 
 
 
 // event listeners
-pageContent.addEventListener('mousedown', closeMenu, {passive: true});
-pageContent.addEventListener('touchstart', closeMenu, {passive: true});
 window.addEventListener("scroll", () => {closeMenu(); scrolling();}, {passive: true});
 window.addEventListener("resize", screenResize, {passive: true});
