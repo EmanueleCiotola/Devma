@@ -22,9 +22,18 @@ body, html {
     text-align: center;
 }
 
+body.body--loading { overflow: hidden; }
+
 section { padding-top: 3rem; }
 @media (max-width: 480px) {  section { padding-top: 1.5rem; } }
 @media (max-width: 584px) {  section { padding-top: 2rem; } }
+
+.mostrato {
+    transition: transform .4s cubic-bezier(0.3, 0, 0.25, 1.5), opacity .4s cubic-bezier(0.3, 0, 0.25, 1.5) !important;
+    transition-delay: 300ms !important;
+    transform: translate(0, 0) !important;
+    opacity: 100% !important;
+}
 
 h1 { font-size: 3rem; }
 
@@ -51,17 +60,6 @@ button {
 
 button:active { transform: scale(0.95); }
 
-#modalPopUp {
-    transition: all .15s cubic-bezier(0.3, 0, 0.25, 1.5);
-    z-index: 50;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 0 !important;
-    width: 100%;
-}
-#modalPopUp.modalPopUp--open { backdrop-filter: blur(4px); background-color: var(--modalColor); height: 100vh !important; }
-
 @media (max-width: 480px) {  body, html { font-size: calc(13px + 0.390625vw); } h1 { font-size: 2rem; } }
 @media (max-width: 584px) { .large { display: none; } }
 @media (min-width: 585px) { .small { display: none; } }
@@ -78,6 +76,49 @@ button:active { transform: scale(0.95); }
 
 
 
+/* stile loadingScreen */
+#loadingScreen {
+    background-color: var(--bgColor);
+    transition: all .15s cubic-bezier(0.3, 0, 0.25, 1.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+#loadingScreen.loadingScreen--hidden {
+    height: 0 !important;
+    display: none;
+}
+
+#loadingScreen__logo { width: 50vw; max-width: 400px; z-index: 9999; }
+
+#loadingScreen__ombra {
+    position: absolute;
+    background-color: var(--cardColor);
+    width: 50vw;
+    height: 50vw;
+    max-width: 425px;
+    max-height: 425px;
+    border-radius: 100%;
+    animation: ombraPulsante 1s infinite;
+}
+
+@keyframes ombraPulsante {
+    0% { transform: scale(120%); }
+
+    50% { transform: scale(100%); }
+  
+    100% { transform: scale(120%); }
+}
+/* stile loadingScreen */
+
+
+
 /* stile navbar */
 #header {
     background: var(--navbarColor) !important;
@@ -89,6 +130,8 @@ button:active { transform: scale(0.95); }
     height: 4rem;
     font-size: .9rem;
     padding-right: 1.5rem;
+    transform: translateY(-4rem);
+    opacity: 0;
     transition: background .15s cubic-bezier(0.3, 0, 0.25, 1.5);
     z-index: 100;
 }
@@ -109,9 +152,9 @@ button:active { transform: scale(0.95); }
     transition: .35s cubic-bezier(0.3, 0, 0.25, 1.5);
 }
 
-#header__menu a { padding: .25rem .5rem; cursor: pointer; }
+#header__menu a { padding: .25rem .5rem; cursor: pointer; transition: all .25s cubic-bezier(0.3, 0, 0.25, 1.5); border-radius: 1.5rem; }
 
-#header__menu a.active { background-color: var(--buttonColor); color: var(--buttonTxtColor); border-radius: 1.5rem; font-weight: 600; }
+#header__menu a.active { background-color: var(--buttonColor); color: var(--buttonTxtColor); font-weight: 600; }
 
 @media (max-width: 480px) {
     #header.header__menu--open  { background: var(--bgColor) !important; }
@@ -139,11 +182,21 @@ button:active { transform: scale(0.95); }
 
 
 /* stile homePage */
-#homePage { height: 68vh; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 4rem; }
+#homePage {
+    height: 68vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    overflow: hidden;
+}
 
-#homePage__fotoPresentazione { width: 5rem; border-radius: 100%; margin-bottom: 1.5rem; }
+#homePage__fotoPresentazione { width: 5rem; border-radius: 100%; margin-bottom: 1.5rem; opacity: 0; transform: translateY(4rem); }
 
-#homePage__text { margin-top: 1rem; margin-bottom: 5rem; }
+#homePage__titolo { opacity: 0; transform: translateX(4rem); transition-delay: 600ms !important; }
+
+#homePage__text { margin-top: 1rem; margin-bottom: 5rem; opacity: 0; transform: translateX(-4rem); transition-delay: 600ms !important; }
 
 @media (min-width: 480px) { #homePage__fotoPresentazione { width: 6rem; } }
 @media (min-width: 584px) { #homePage__fotoPresentazione { width: 7.5rem; } }
@@ -154,7 +207,15 @@ button:active { transform: scale(0.95); }
 /* stile portfolioPage */
 #portfolioPage { display: flex; justify-content: center; gap: 6.5vw; padding-bottom: 20vh; }
 
-.portfolioPage__progetto { background-color: var(--cardColor); width: 40vw; max-width: 480px; padding: 5vh 0; border-radius: 1.5rem; }
+.portfolioPage__progetto {
+    background-color: var(--cardColor);
+    width: 40vw;
+    max-width: 480px;
+    padding: 5vh 0;
+    border-radius: 1.5rem;
+    opacity: 0;
+    transform: translateY(4rem);
+}
 
 .portfolioPage__progetto img { position: relative; width: 80%; border-radius: 1.5rem; }
 
@@ -170,9 +231,11 @@ button:active { transform: scale(0.95); }
 
 
 /* stile socialPage */
-#socialPage { padding-bottom: 25vh; }
+#socialPage { padding-bottom: 25vh; overflow-x: hidden; }
 
-#socialPage__text { margin-top: 2.5rem; margin-bottom: 2rem; }
+#socialPage__titolo { opacity: 0; transform: translateX(-4rem); }
+
+#socialPage__text { margin-top: 2.5rem; margin-bottom: 2rem; opacity: 0; transform: translateX(4rem); }
 
 .socialPage__socialSpace {
     display: grid;
@@ -191,7 +254,15 @@ button:active { transform: scale(0.95); }
     align-items: center;
     justify-content: space-around;
     width: 13rem;
+    opacity: 0;
+    transform: translateY(4rem);
 }
+
+.socialSpace__social:nth-child(2).mostrato { transition-delay: 400ms !important; }
+.socialSpace__social:nth-child(3).mostrato { transition-delay: 500ms !important; }
+.socialSpace__social:nth-child(4).mostrato { transition-delay: 600ms !important; }
+.socialSpace__social:nth-child(5).mostrato { transition-delay: 700ms !important; }
+.socialSpace__social:nth-child(6).mostrato { transition-delay: 800ms !important; }
 
 .social__socialIcon { width: 2rem; }
 .social__socialIcon:active { transform: scale(0.95); }
@@ -203,6 +274,11 @@ button:active { transform: scale(0.95); }
         column-gap: 2rem;
         row-gap: 1.5rem;
     }
+    .socialSpace__social:nth-child(2).mostrato { transition-delay: 400ms !important; }
+    .socialSpace__social:nth-child(3).mostrato { transition-delay: 300ms !important; }
+    .socialSpace__social:nth-child(4).mostrato { transition-delay: 400ms !important; }
+    .socialSpace__social:nth-child(5).mostrato { transition-delay: 300ms !important; }
+    .socialSpace__social:nth-child(6).mostrato { transition-delay: 400ms !important; }
 }
 @media (max-width: 584px) {
     .socialPage__socialSpace {
@@ -210,13 +286,37 @@ button:active { transform: scale(0.95); }
         grid-template-rows: repeat(6, 1fr);
         row-gap: 1.5rem;
     }
+    .socialSpace__social:nth-child(2).mostrato { transition-delay: 300ms !important; }
+    .socialSpace__social:nth-child(3).mostrato { transition-delay: 300ms !important; }
+    .socialSpace__social:nth-child(4).mostrato { transition-delay: 300ms !important; }
+    .socialSpace__social:nth-child(5).mostrato { transition-delay: 300ms !important; }
+    .socialSpace__social:nth-child(6).mostrato { transition-delay: 300ms !important; }
 }
 /* stile socialPage */
 
 
 
 /* stile contattiPage */
-#contattiPage { padding-bottom: 35vh; }
+#contattiPage { padding-bottom: 35vh; overflow-x: hidden; }
 
-#contattiPage__text { margin-top: 2.5rem; margin-bottom: 2rem; }
+#contattiPage__titolo { opacity: 0; transform: translateX(4rem);}
+
+#contattiPage__text { margin-top: 2.5rem; margin-bottom: 2rem; opacity: 0; transform: translateX(-4rem); }
+
+#contattiPage__bottoneContattami { opacity: 0; transform: translateY(4rem); }
 /* stile contattiPage */
+
+
+
+/* stile modalPopUp */
+#modalPopUp {
+    transition: all .15s cubic-bezier(0.3, 0, 0.25, 1.5);
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 0 !important;
+    width: 100%;
+}
+#modalPopUp.modalPopUp--open { backdrop-filter: blur(4px); background-color: var(--modalColor); height: 100vh !important; }
+/* stile modalPopUp */
