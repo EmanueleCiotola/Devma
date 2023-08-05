@@ -121,7 +121,7 @@ button:active { transform: scale(0.95); }
 
 /* stile navbar */
 #header {
-    background: var(--navbarColor);
+    background-color: var(--navbarColor);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     position: fixed;
@@ -131,7 +131,8 @@ button:active { transform: scale(0.95); }
     font-size: .9rem;
     padding-right: 1.5rem;
     transform: translateY(-4rem);
-    transition: all .15s cubic-bezier(0.3, 0, 0.25, 1.5) !important;
+    opacity: 0;
+    transition: background-color .15s cubic-bezier(0.3, 0, 0.25, 1.5), transform .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms, opacity .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms !important;
     z-index: 100;
 }
 
@@ -156,7 +157,7 @@ button:active { transform: scale(0.95); }
 #header__menu a.active { background-color: var(--buttonColor); color: var(--buttonTxtColor); font-weight: 600; }
 
 @media (max-width: 480px) {
-    #header.header__menu--open  { background: var(--bgColor); }
+    #header.header__menu--open  { background-color: var(--bgColor); }
 
     #header__menu {
         background: var(--bgColor);
