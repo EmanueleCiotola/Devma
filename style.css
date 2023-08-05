@@ -167,7 +167,6 @@ button:active { transform: scale(0.95); }
         height: auto;
         transform: scaleY(0);
         transform-origin: top;
-        will-change: transform;
         position: absolute;
         top: 4rem;
         flex-direction: column;
