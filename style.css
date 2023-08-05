@@ -132,7 +132,9 @@ button:active { transform: scale(0.95); }
     padding-right: 1.5rem;
     transform: translateY(-4rem);
     opacity: 0;
-    transition: background-color .15s cubic-bezier(0.3, 0, 0.25, 1.5), transform .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms, opacity .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms !important;
+    transition: background-color .15s cubic-bezier(0.3, 0, 0.25, 1.5),
+    transform .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms,
+    opacity .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms !important;
     z-index: 100;
 }
 
@@ -163,8 +165,9 @@ button:active { transform: scale(0.95); }
         background: var(--bgColor);
         width: 100%;
         height: auto;
-        transform:scaleY(0);
+        transform: scaleY(0);
         transform-origin: top;
+        will-change: transform;
         position: absolute;
         top: 4rem;
         flex-direction: column;
