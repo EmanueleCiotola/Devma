@@ -83,7 +83,7 @@ button:active { transform: scale(0.95); }
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -95,15 +95,15 @@ button:active { transform: scale(0.95); }
     display: none;
 }
 
-#loadingScreen__logo { width: 50vw; max-width: 400px; z-index: 9999; }
+#loadingScreen__logo { width: 40vw; max-width: 400px; z-index: 9999; animation: ombraPulsante 1s infinite; }
 
 #loadingScreen__ombra {
     position: absolute;
     background-color: var(--cardColor);
     width: 50vw;
     height: 50vw;
-    max-width: 425px;
-    max-height: 425px;
+    max-width: 450px;
+    max-height: 450px;
     border-radius: 100%;
     animation: ombraPulsante 1s infinite;
 }
@@ -131,8 +131,7 @@ button:active { transform: scale(0.95); }
     font-size: .9rem;
     padding-right: 1.5rem;
     transform: translateY(-4rem);
-    opacity: 0;
-    transition: background .15s cubic-bezier(0.3, 0, 0.25, 1.5);
+    transition: all .15s cubic-bezier(0.3, 0, 0.25, 1.5) !important;
     z-index: 100;
 }
 
@@ -150,7 +149,6 @@ button:active { transform: scale(0.95); }
     align-items: center;
     gap: 1.5rem;
     border-radius: 0 0 1.5rem 1.5rem;
-    transition: .35s cubic-bezier(0.3, 0, 0.25, 1.5);
 }
 
 #header__menu a { padding: .25rem .5rem; cursor: pointer; transition: all .25s cubic-bezier(0.3, 0, 0.25, 1.5); border-radius: 1.5rem; }
@@ -163,7 +161,9 @@ button:active { transform: scale(0.95); }
     #header__menu {
         background: var(--bgColor);
         width: 100%;
+        height: auto;
         transform:scaleY(0);
+        transform-origin: top;
         position: absolute;
         top: 4rem;
         flex-direction: column;
@@ -171,10 +171,20 @@ button:active { transform: scale(0.95); }
         gap: 2.5rem;
         overflow: hidden;
         z-index: 100;
+        opacity: 90%;
+        transition: transform .35s cubic-bezier(0.3, 0, 0.25, 1), opacity .15s cubic-bezier(0.3, 0, 0.25, 1.5);
     }
 
-    #header__menu.header__menu--open { transform:scaleY(auto); padding: 2rem 0 3.25rem 0;}
-    #header__menu a { padding: .5rem .8rem; }
+    #header__menu a { padding: .5rem .8rem; opacity: 0; }
+
+    #header__menu.header__menu--open {
+        transform: scaleY(100%);
+        padding: 2rem 0 3.25rem 0;
+        transition: transform .35s cubic-bezier(0.3, 0, 0.25, 1.5);
+        opacity: 100%;
+    }
+    
+    #header__menu.header__menu--open a { opacity: 100%; }
 }
 
 @media (min-width: 481px) { #header__spaceIconaMenu { visibility: hidden; } }
