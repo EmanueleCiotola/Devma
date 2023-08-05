@@ -39,13 +39,6 @@ h1 { font-size: 3rem; }
 
 p { line-height: clamp(20px, 1.4rem, 28px); }
 
-img, i {
-    user-select: none; /* rende testo non selezionabile */
-    -moz-user-select: none; /* firefox */
-    -webkit-user-select: none; /* Chrome, Opera and Safari*/
-    -ms-user-select: none; /* IE, ms-edge */
-}
-
 button {
     background-color: var(--buttonColor);
     color: var(--buttonTxtColor);
@@ -60,7 +53,7 @@ button {
 
 button:active { transform: scale(0.95); }
 
-button, input, label {
+button, input, label, img, i {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
