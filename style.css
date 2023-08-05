@@ -60,7 +60,7 @@ button {
 
 button:active { transform: scale(0.95); }
 
-button, input {
+button, input, label {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
