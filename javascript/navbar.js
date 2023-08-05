@@ -27,6 +27,7 @@ function scrolling() {
 // gestione della navbar per i dispositivi piccoli
 isMenuShown = false;
 const header = document.getElementById("header");
+const iconMenu = document.getElementById("header__iconaMenu");
 const menu = document.getElementById("header__menu");
 const modalPopUp = document.getElementById("modalPopUp");
 function toggleMenu() {
@@ -39,6 +40,7 @@ function closeMenu() {
     if (isMenuShown == true) {
         isMenuShown = false;
         header.classList.remove("header__menu--open");
+        iconMenu.checked = false;
         menu.classList.remove("header__menu--open");
         modalPopUp.classList.remove("modalPopUp--open");
     }
