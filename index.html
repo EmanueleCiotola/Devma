@@ -40,7 +40,17 @@
             <a id="contatti" onclick="goTo(id)">Contatti</a>
         </nav>
         <div id="header__spaceIconaMenu">
-            <img id="header__iconaMenu" class="small" src="assets/icons/menu.svg" alt="Menu" onclick="toggleMenu()" draggable="false">
+            <input type="checkbox" id="header__iconaMenu" />
+            <label class="burger" for="header__iconaMenu" onclick="toggleMenu()">
+                <button id="header__iconaMenu__button">
+                    <div class="container top">
+                        <div class="line top"></div>
+                    </div>
+                    <div class="container bottom">
+                        <div class="line bottom"></div>
+                    </div>
+                </button>
+            </label>
         </div>
     </header>
     

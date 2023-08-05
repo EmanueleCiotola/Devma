@@ -140,7 +140,27 @@ button:active { transform: scale(0.95); }
 
 #header__spaceIconaMenu { display: flex; justify-content: flex-end; align-items: center; height: 100%; }
 
-#header__iconaMenu { width: 1.5rem; }
+/* stile icona animata hamburger menu */
+.container.top { transform: translateY(-4px) scaleX(.88235); }
+.container.bottom { transform: translateY(4px) scaleX(.88235); }
+#header__iconaMenu:checked + label .container .line.bottom { transform: rotateZ(45deg); }
+#header__iconaMenu:checked + label .container .line.top { transform: rotateZ(-45deg); }
+#header__iconaMenu:checked + label .container.bottom { transform: translateY(0) scale(85%); }
+#header__iconaMenu:checked + label .container.top { transform: translateY(0) scale(85%); }
+#header__iconaMenu:checked + label .line.bottom { transform: translateY(0) scale(85%); transition-delay: 0.05s; }
+#header__iconaMenu:checked + label .line.top { transform: translateY(0) scale(85%); transition-delay: 0.05s; }
+.container { transition: transform 0.1s cubic-bezier(0.3, 0, 0.25, 1) 0.05s; }
+#header__iconaMenu:checked + label .container { transition-delay: 0s; }
+.line { transition: transform 0.1s cubic-bezier(0.3, 0, 0.25, 1); }
+/* --- sopra animazioni e sotto parte grafica --- */
+#header__iconaMenu__button { all: unset; cursor: pointer; display: block; }
+#header__iconaMenu__button * { pointer-events: none; }
+.burger { height: 20px; width: 27px; display: block; position: relative; }
+.container { position: absolute; top: 9px; }
+.line { height: 2px; border-radius: 3px; background: var(--disabledTxtColor); width: 27px; }
+#header__iconaMenu + label { cursor: pointer; }
+#header__iconaMenu { display: none; }
+/* stile icona animata hamburger menu */
 
 #header__menu {
     color: var(--disabledTxtColor);
@@ -284,7 +304,7 @@ button:active { transform: scale(0.95); }
 .socialSpace__social:nth-child(5).mostrato { transition-delay: 700ms !important; }
 .socialSpace__social:nth-child(6).mostrato { transition-delay: 800ms !important; }
 
-.social__socialIcon { width: 2rem; }
+.social__socialIcon { width: 2rem; cursor: pointer; }
 .social__socialIcon:active { transform: scale(0.95); }
 
 @media (max-width: 1024px) {
