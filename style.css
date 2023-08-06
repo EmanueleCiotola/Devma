@@ -247,6 +247,7 @@ img, button, input, label, a {
 
 @media (max-width: 480px) { #homePage__text { margin-bottom: 6.5rem; } }
 @media (min-width: 584px) { #homePage__fotoPresentazione { width: 7.5rem; } }
+@media (max-height: 584px) { #homePage { height: auto; padding-top: 1rem; } #homePage__text { margin-bottom: 1rem; } }
 /* stile homePage */
 
 
@@ -269,6 +270,7 @@ img, button, input, label, a {
 .portfolioPage__progetto p { margin: 1rem 0 2rem 0; }
 
 @media (max-width: 584px) { .portfolioPage__progetto { width: 80vw !important; min-width: 280px; } }
+@media (max-height: 584px) { .portfolioPage__progetto { padding: calc(25px + 4vh) 0; } }
 @media (max-width: 1024px) {
     #portfolioPage { flex-direction: column; align-items: center; }
     .portfolioPage__progetto { width: 60vw; max-width: 600px; }
