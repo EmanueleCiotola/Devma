@@ -39,6 +39,8 @@ h1 { font-size: 3rem; }
 
 p { line-height: clamp(20px, 1.4rem, 28px); }
 
+a { -webkit-tap-highlight-color: transparent; }
+
 button {
     background-color: var(--buttonColor);
     color: var(--buttonTxtColor);
