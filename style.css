@@ -39,8 +39,6 @@ h1 { font-size: 3rem; }
 
 p { line-height: clamp(20px, 1.4rem, 28px); }
 
-a { -webkit-tap-highlight-color: transparent; }
-
 button {
     background-color: var(--buttonColor);
     color: var(--buttonTxtColor);
@@ -55,9 +53,11 @@ button {
 
 button:active { transform: scale(0.95); }
 
-img { pointer-events: none; }
+.imgNonCliccabile { pointer-events: none; }
 
-img, button, input, label {
+a:active { color: var(--txtColor); }
+
+img, button, input, label, a {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -234,7 +234,7 @@ img, button, input, label {
 }
 
 #homePage__fotoPresentazione {
-    width: 5rem;
+    width: 6rem;
     border-radius: 100%;
     margin-bottom: 1.5rem;
     opacity: 0;
@@ -245,7 +245,7 @@ img, button, input, label {
 
 #homePage__text { margin-top: 1rem; margin-bottom: 5rem; opacity: 0; transform: translateX(-4rem); transition-delay: 650ms !important; }
 
-@media (min-width: 480px) { #homePage__fotoPresentazione { width: 6rem; } }
+@media (max-width: 480px) { #homePage__text { margin-bottom: 6.5rem; } }
 @media (min-width: 584px) { #homePage__fotoPresentazione { width: 7.5rem; } }
 /* stile homePage */
 
