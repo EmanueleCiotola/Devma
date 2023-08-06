@@ -123,7 +123,7 @@ img, button, input, label, a {
     100% { transform: scale(120%); }
 }
 
-@media (max-height: 584px) { #loadingScreen__logo { max-height: 55vh; } #loadingScreen__ombra { max-width: 65vh; max-height: 65vh; } }
+@media (max-height: 584px) { #loadingScreen__logo { max-height: 45vh; } #loadingScreen__ombra { max-width: 55vh; max-height: 55vh; } }
 /* stile loadingScreen */
 
 

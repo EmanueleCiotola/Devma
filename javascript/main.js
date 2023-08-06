@@ -36,3 +36,8 @@ window.addEventListener("load", function() {
 
 // gestione dei link esterni
 function apriUrl(url) { window.open(url, "_blank"); }
+
+
+
+// evitare scroll automatico quando si ricarica pagina
+history.scrollRestoration = "manual";
