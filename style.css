@@ -141,7 +141,7 @@ img, button, input, label, a {
     padding-right: 1.5rem;
     transform: translateY(-4rem);
     opacity: 0;
-    transition: background-color .15s cubic-bezier(.1, .45, .65, .7) 300ms,
+    transition: background-color .15s cubic-bezier(.1, .45, .65, .7) 250ms,
     transform .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms,
     opacity .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms !important;
     /* transition-property: background-color; */
