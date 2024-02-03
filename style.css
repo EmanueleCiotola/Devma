@@ -1,12 +1,12 @@
 :root {
     --bgColor: #222222;
     --txtColor: #F5F5F4;
-    --navbarColor: rgba(34,34,34,0.9);
+    --navbarColor: rgba(34, 34, 34, 0.9);
     --disabledTxtColor: #95A3B3;
     --buttonColor: #F5F5F4;
     --buttonTxtColor: #222222;
     --cardColor: #292931;
-    --modalColor: rgba(34,34,34,0.4);
+    --modalColor: rgba(34, 34, 34, 0.4);
 }
 
 @font-face { font-family: myFont; src: url("assets/fonts/Exo2-VariableFont_wght.ttf"); font-display: swap; }
@@ -141,7 +141,7 @@ img, button, input, label, a {
     padding-right: 1.5rem;
     transform: translateY(-4rem);
     opacity: 0;
-    transition: background-color .15s cubic-bezier(0.3, 0, 0.25, 1.5),
+    transition: background-color 1s cubic-bezier(0.3, 0, 0.25, 1.5),
     transform .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms,
     opacity .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms !important;
     z-index: 100;
@@ -188,10 +188,10 @@ img, button, input, label, a {
 #header__menu a.active { background-color: var(--buttonColor); color: var(--buttonTxtColor); font-weight: 600; }
 
 @media (max-width: 480px) {
-    #header.header__menu--open  { background-color: var(--bgColor); }
+    #header.header__menu--open  { background-color: var(--cardColor); transition: background-color .15s cubic-bezier(0.3, 0, 0.25, 1.5) !important; }
 
     #header__menu {
-        background: var(--bgColor);
+        background: var(--cardColor);
         width: 100%;
         height: auto;
         transform: scaleY(0);
