@@ -141,9 +141,11 @@ img, button, input, label, a {
     padding-right: 1.5rem;
     transform: translateY(-4rem);
     opacity: 0;
-    transition: background-color 1s cubic-bezier(0.3, 0, 0.25, 1.5),
+    transition: background-color .15s cubic-bezier(.1, .45, .65, .7) 300ms,
     transform .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms,
     opacity .4s cubic-bezier(0.3, 0, 0.25, 1.5) 300ms !important;
+    /* transition-property: background-color; */
+    transition-delay: background-color 4s !important;
     z-index: 100;
 }
 
@@ -158,9 +160,9 @@ img, button, input, label, a {
 #header__iconaMenu:checked + label .container.top { transform: translateY(0) scale(85%); }
 #header__iconaMenu:checked + label .line.bottom { transform: translateY(0) scale(85%); transition-delay: 0.05s; }
 #header__iconaMenu:checked + label .line.top { transform: translateY(0) scale(85%); transition-delay: 0.05s; }
-.container { transition: transform 0.1s cubic-bezier(0.3, 0, 0.25, 1) 0.05s; }
+.container { transition: transform 0.15s cubic-bezier(0.3, 0, 0.25, 1) .05s; }
 #header__iconaMenu:checked + label .container { transition-delay: 0s; }
-.line { transition: transform 0.1s cubic-bezier(0.3, 0, 0.25, 1); }
+.line { transition: transform 0.15s cubic-bezier(0.3, 0, 0.25, 1); }
 /* --- sopra animazioni e sotto parte grafica --- */
 #header__iconaMenu__button { all: unset; cursor: pointer; display: block; }
 #header__iconaMenu__button * { pointer-events: none; }
@@ -188,7 +190,7 @@ img, button, input, label, a {
 #header__menu a.active { background-color: var(--buttonColor); color: var(--buttonTxtColor); font-weight: 600; }
 
 @media (max-width: 480px) {
-    #header.header__menu--open  { background-color: var(--cardColor); transition: background-color .15s cubic-bezier(0.3, 0, 0.25, 1.5) !important; }
+    #header.header__menu--open  { background-color: var(--cardColor); transition: background-color .15s cubic-bezier(0.3, 0, 0.25, 1.5) 0ms !important; }
 
     #header__menu {
         background: var(--cardColor);
