@@ -1,4 +1,4 @@
 # Devma
-Puoi trovare qui i miei progetti, social e contatti. Se vuoi conoscermi, segnalare un bug che hai trovato nel mio codice o sapere a cosa ho lavorato, questo è il posto giusto.
+Scopri i miei progetti, esplora il mio curriculum vitae, trova i miei profili social e i miei contatti. Se vuoi conoscermi o collaborare con me, questo è il posto giusto!
 
 https://emanueleciotola.github.io/Devma/
