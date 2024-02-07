@@ -10,7 +10,7 @@ function goTo(daAttivare) {
 
 
 // gestione dello scroll
-const navSections = document.querySelectorAll("#homePage, #portfolioPage, #cvPage, #socialPage, #contattiPage");
+const navSections = document.querySelectorAll("#homePage, #portfolioPage, #socialPage, #contattiPage");
 const navLinks = document.querySelectorAll("#header__menu a");
 let currentNavSectionIndex = 0;
 function scrolling() {
