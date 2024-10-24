@@ -21,7 +21,9 @@ body, html {
     color: var(--colorePrincipale);
     font-family: "myFont", Helvetica;
     font-size: calc(15px + 0.390625vw);
-    line-height: 1.6;
+    letter-spacing: .05rem;
+    word-spacing: .1rem;
+    line-height: 1.6rem;
     scroll-behavior: smooth;
     text-align: center;
 }
@@ -251,7 +253,7 @@ img, button, input, label, a {
     transition-delay: 300ms !important;
 }
 
-#homePage__titolo { opacity: 0; transform: translateX(4rem); transition-delay: 650ms !important; padding: 0 4rem; }
+#homePage__titolo { opacity: 0; transform: translateX(4rem); transition-delay: 650ms !important; padding: 0 4rem; line-height: 3.25rem; }
 
 #homePage__text {
     margin-top: 1rem;
